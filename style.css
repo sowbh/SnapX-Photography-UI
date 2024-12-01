@@ -1,0 +1,334 @@
+:root {
+    --primary-color: #00bdfe;
+    --secondary-color: #fff;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+/* to style the part of a text that is selected by a user */
+::selection {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+/* header part */
+header {
+    background-color: var(--secondary-color);
+    /* sticky header */
+    /* position: sticky; 
+    top: 0; 
+    left: 0;
+    width: 100%;
+    /* below the modal(modal's z-index:1055), but above other content */
+    /* z-index: 1020;  */
+
+    /* or sticky-top class from bootstrap */
+}
+
+.navbar {
+    margin: -16px;
+}
+
+/* Add padding for better spacing */
+.navbar-nav {
+    padding: 10px;
+}
+
+.nav-bg {
+    background: var(--primary-color);
+    padding: 8px;
+    margin: 8px;
+}
+
+.nav-bg .nav-link {
+    color: var(--secondary-color);
+}
+
+header .btn-outline-bs-blue {
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+}
+
+header .btn-outline-bs-blue:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+/* modals related to header button */
+/* modals styling */
+#login1 .modal-header .btn,
+#login2 .modal-header .btn,
+#signup .modal-header .btn {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+#login-1 .modal-footer .btn-primary {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+#login2 .modal-footer a {
+    color: var(--primary-color);
+}
+
+#login2 .modal-footer a:hover {
+    color: blue;
+}
+
+/* main section */
+/* main section's first part */
+main .first-part {
+    background-image: url('./images/banner-bg.jpg');
+    background-size: cover;
+    /* height: 100vh; */
+    background-position: center;
+    color: white;
+}
+
+.first-part .straight-line {
+    width: 65%;
+    /* Adjust as needed */
+    border: 1px solid #fff;
+    /* White color line */
+    margin: 20px auto;
+    opacity: 0.7;
+}
+
+.first-part .para {
+    /* max width as per requirement */
+    max-width: 600px;
+    /* center the paragraph */
+    margin: 0 auto 20px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* explore button */
+.buttons .btn .text-primary {
+    color: var(--secondary-color);
+}
+
+.buttons .btn a:hover {
+    /* background-color: var(--secondary-color); */
+    color: var(--primary-color);
+}
+
+/* watch video link */
+.buttons a {
+    color: var(--secondary-color);
+}
+
+.buttons a:hover {
+    color: var(--primary-color);
+}
+
+/* main section's second part */
+/* second-part(carousels) */
+.second-part {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
+.carousel-image {
+    width: 50%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Custom sliding behavior */
+#carousel-part .carousel-inner {
+    transform: translate3d(0, 0, 0);
+}
+
+#carousel-part .carousel-item-next,
+#carousel-part .carousel-item-prev {
+    transform: translate3d(-33.33%, 0, 0);
+}
+
+/* styles for the carousel controls */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    /* makes them circular */
+    border-radius: 50%;
+    /* removes any border */
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease;
+}
+
+/* position adjustments for left and right buttons */
+/* * move to the left side, as needed */
+.carousel-control-prev {
+    left: 45px;
+}
+
+/* move to the right side as needed */
+.carousel-control-next {
+    right: 45px;
+}
+
+/* styling the control icons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    /* adjust icon size */
+    background-size: 20px 20px;
+}
+
+/* hover effect for the buttons */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: #007bbf;
+}
+
+/* main section's third part(categories section) */
+/* discover button */
+.btn-primary {
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.btn-primary:hover {
+    border: 1px solid var(--primary-color);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* main section's fourth part(closed photography contest part) */
+main .fourth-part {
+    background-image: url('./images/closed-bg.jpg');
+    background-size: cover;
+    /* height: 100vh; */
+    background-position: center;
+    color: white;
+}
+
+/* general classes used in code */
+/* included in main section's fifth part(pricing part) */
+
+/* text-blue class for changing text-color */
+.text-blue {
+    color: var(--primary-color);
+}
+
+/* text-del class for striking the sentence(used instead of del tag) */
+.text-del {
+    text-decoration: line-through;
+}
+
+/* for all btn-outline-primary class */
+.btn-outline-primary {
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* main section's fifth part(pricing part) */
+.fifth-part .card {
+    /* transition: all 0.4s ease; */
+    transition: box-shadow 0.4s ease, color 0.4s ease;
+}
+
+/* pricing part hover effects */
+.fifth-part .card:hover {
+    box-shadow: 5px 5px 8px lightgrey;
+}
+
+/* change card-title color on hover */
+.fifth-part .card:hover .card-title {
+    color: var(--primary-color);
+}
+
+/* footer part */
+footer {
+    font-size: 1rem;
+}
+
+/* setting background color for footer */
+.bg-primary{
+    background-color: var(--primary-color) !important;
+}
+
+@media (max-width: 991.98px) {
+
+    /* positioning the collapsible menu below the header for smaller screens */
+    #navbarSupportedContent {
+        /* places the menu below the header */
+        position: absolute;
+        top: 90%;
+        left: -9px;
+        width: 100%;
+        z-index: 999;
+    }
+
+    /* reducing font sizes for small screens */
+    .first-part h1 {
+        font-size: 2rem;
+    }
+
+    /* adjusting the horizontal line width */
+    .straight-line {
+        width: 80%;
+    }
+
+    .first-part .para {
+        font-size: 0.9rem;
+        padding: 14px 32px;
+    }
+
+    /* adjusting the button sizes for smaller screens */
+    .buttons a {
+        font-size: 1rem;
+    }
+
+    /* adjusting the spacing between buttons */
+    .buttons {
+        flex-direction: row;
+        gap: 1rem;
+        margin-top: 20px;
+    }
+
+    /* third part top part, reduce font-size for small screens */
+    .third-part .top-part{
+        font-size: 0.9rem;
+    }
+
+
+    /* fifth part responsiveness */
+    .container-fluid {
+        padding: 0;
+    }
+
+    .card {
+        margin: 0;
+        width: 100%;
+    }
+
+    /* reduce font-size for smaller screens */
+    footer {
+        font-size: 0.9rem;
+    }
+
+}

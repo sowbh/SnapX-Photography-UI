@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapX Photographer Page</title>
+    <!-- bootstrap link -->
+    <link rel="stylesheet" href="./bootstrap-5.3.3-dist/css/bootstrap.min.css">
+
+    <!-- icons cdn link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- header part -->
+    <header class="sticky-top d-flex align-items-center justify-content-around gap-4">
+        <a class="logo" href="index.html">
+            <img src="./images/logo.png" alt="logo image" class="d-block w-100">
+        </a>
+
+        <nav class="navbar navbar-expand-lg mb-0">
+            <!-- sign in button for mobile view -->
+            <button class="btn btn-outline-bs-blue mt-3 me-2 p-2 d-block d-lg-none" data-bs-toggle="modal"
+                data-bs-target="#login1">
+                <span class="bi bi-person-fill"></span>
+                <span>Sign In/Up</span>
+            </button>
+
+            <!-- Hamburger for mobile view -->
+            <button class="navbar-toggler ms-auto mt-3 me-2 p-1 d-block d-lg-none" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-bg">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./index.html">HOME</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            PHOTOS & VIDEOS
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">CONTESTS</a></li>
+                            <li><a class="dropdown-item" href="#">SINGLE CONTEST</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">CATEGORIES</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">USERS</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- sign In/Up button for >= large screen -->
+        <button class="btn btn-outline-bs-blue p-3 d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#login1">
+            <span class="bi bi-person-fill"></span>
+            <span>Sign In/Up</span>
+        </button>
+
+    </header>
+
+    <!-- modals for 3 operations -->
+    <!-- modal for Sign In/Up -->
+    <div class="modal fade" id="login1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="fw-bold">LOGIN</span>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body d-flex flex-column align-items-center gap-2 justify-content-center">
+                    <a href="#" class="text-decoration-none">
+                        <span class="bi bi-facebook text-primary"></span>
+                        <span>Connect with Facebook</span>
+                    </a><br><br>
+                    <a href="#" class="text-decoration-none">
+                        <span class="bi bi-google text-danger"></span>
+                        <span>Connect with Google</span>
+                    </a><br><br>
+
+                    <p>Or Use Your Email Address</p>
+                </div>
+                <div class="modal-footer d-flex align-items-center justify-content-around">
+                    <div class="d-flex gap-4">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#login2">Login</button>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signup">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal for login2(enter username) -->
+    <div class="modal fade" id="login2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="fw-bold">LOGIN</span>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email/Username</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Remember me on this computer</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer d-flex flex-column align-items-center justify-content-around">
+                    <div class="d-flex gap-4">
+                        <button class="btn btn-primary bi-chevron-double-left" data-bs-dismiss="modal"
+                            data-bs-toggle="modal" data-bs-target="#login1">Back</button>
+                        <button class="btn btn-primary">Login</button>
+                    </div>
+                    <a href="#" class="alert-link text-decoration-none mt-3">Forgot Password?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal for register -->
+    <div class="modal fade" id="signup">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="fw-bold">REGISTER</span>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputusername" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="exampleInputusername">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputemail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="exampleInputemail">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck">
+                            <label class="form-check-label" for="exampleCheck">Send me occasional email updates</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer d-flex flex-column align-items-center justify-content-around">
+                    <div class="d-flex gap-4">
+                        <button class="btn btn-primary bi-chevron-double-left" data-bs-toggle="modal"
+                            data-bs-target="#login1">Back</button>
+                        <button class="btn btn-primary">Register</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- main part -->
+    <main>
+
+        <!-- intro part -->
+        <div class="first-part d-flex flex-column align-items-center justify-content-center text-center vh-100">
+            <h1 class="h1 fw-bold">Enter a world of <span style="color: #00bdfe;">Photos</span> & Amazing <span
+                    style="color: #00bdfe;">Awards</span>
+            </h1>
+            <hr class="straight-line">
+            <p class="para p-sm-2 p-md-2">SnapX Photography is a professional website template with 5 different HTML
+                pages for maximum
+                customizations. It is free for commercial usage. This Bootstrap v5.1.3 CSS layout is provided by
+                TemplateMo Free CSS Templates.</p>
+
+            <!-- centered row with button and link -->
+            <div class="buttons d-flex align-items-center justify-content-center gap-5 mt-4 mx-4">
+                <!-- button for SnapX Contest -->
+                <a href="#" class="btn btn-outline-light text-decoration-none fs-4">
+                    Explore SnapX Contest
+                </a>
+
+                <!-- link for YouTube Video -->
+                <a href="https://www.youtube.com/templatemo" target="_blank"
+                    class="d-flex align-items-center fs-4 text-decoration-none">
+                    <i class="bi bi-play-fill me-2"></i> Watch Our Video Now
+                </a>
+            </div>
+
+        </div>
+
+        <!-- carousels part -->
+        <div class="second-part">
+
+            <div id="carousel-part" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+                <div class="carousel-inner">
+                    <!-- Carousel Item 1 -->
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center">
+                            <img src="./images/featured-01.jpg" class="d-block img-fluid carousel-image"
+                                alt="feature1 img">
+                        </div>
+                    </div>
+                    <!-- Carousel Item 2 -->
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <img src="./images/featured-02.jpg" class="d-block img-fluid carousel-image"
+                                alt="feature2 img">
+                        </div>
+                    </div>
+                    <!-- Carousel Item 3 -->
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <img src="./images/featured-03.jpg" class="d-block img-fluid carousel-image"
+                                alt="feature3 img">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-part"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel-part"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+
+            </div>
+        </div>
+
+        <!-- categories part -->
+        <div class="third-part">
+            <div class="container">
+                <!-- top-part -->
+                <div class="top-part d-flex justify-content-around mt-5">
+                    <div class="left-side">
+                        <h5 class="text-blue">OUR CATEGORIES</h5>
+                        <p class="fs-2 fw-bold">Check Out <span class="text-blue">Popular</span> Contest <span class="text-blue">Categories</span></p>
+                    </div>
+                    <!-- button -->
+                    <button class="btn btn-primary p-2 m-2 fs-5">Discover all Categories</button>
+                </div>
+            </div>
+
+            <!-- cards part -->
+            <div class="container mt-4">
+                <div class="row justify-content-center">
+                    <!-- Card 1 -->
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="card h-100 d-flex flex-column">
+                            <div class="card-header text-center">
+                                <img src="./images/icon-01.png" alt="icon-01" class="mb-2">
+                                <h5 class="card-title">Nature Pic Contest</h5>
+                                <p class="card-text">
+                                    <span class="text-blue border p-2">126</span> Available Contests</p>
+                            </div>
+                            <img src="./images/popular-01.png" class="card-img-top p-3" alt="popular-01">
+                            <div class="card-body mt-auto text-center">
+                                <a href="#" class="btn btn-outline-primary">Browse Nature Pic Contest</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="card h-100 d-flex flex-column">
+                            <div class="card-header text-center">
+                                <img src="./images/icon-02.png" alt="icon-02" class="mb-2">
+                                <h5 class="card-title">Random Pic Contest</h5>
+                                <p class="card-text">
+                                    <span class="text-blue border p-2">116</span> Available Contests</p>
+                            </div>
+                            <img src="./images/popular-02.png" class="card-img-top p-3" alt="popular-02">
+                            <div class="card-body mt-auto text-center">
+                                <a href="#" class="btn btn-outline-primary">Browse Random Pic Contest</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="card h-100 d-flex flex-column">
+                            <div class="card-header text-center">
+                                <img src="./images/icon-03.png" alt="icon-03" class="mb-2">
+                                <h5 class="card-title">Portrait Pic Contest</h5>
+                                <p class="card-text">
+                                    <span class="text-blue border p-2">164</span> Available Contests</p>
+                            </div>
+                            <img src="./images/popular-03.png" class="card-img-top p-3" alt="popular-03">
+                            <div class="card-body mt-auto text-center">
+                                <a href="#" class="btn btn-outline-primary">Browse Portrait Pic Contest</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="card h-100 d-flex flex-column">
+                            <div class="card-header text-center">
+                                <img src="./images/icon-04.png" alt="icon-04" class="mb-2">
+                                <h5 class="card-title">Space Pic Contest</h5>
+                                <p class="card-text">
+                                    <span class="text-blue border p-2">135</span> Available Contests</p>
+                            </div>
+                            <img src="./images/popular-04.png" class="card-img-top p-3" alt="popular-04">
+                            <div class="card-body mt-auto text-center">
+                                <a href="#" class="btn btn-outline-primary">Browse Space Pic Contest</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- closed photography contest part -->
+        <div class="fourth-part mt-4">
+            <div class="text-center d-flex flex-column justify-content-center align-items-center">
+                <h5 class="text-blue mt-4">Closed Photography Contests</h5>
+                <p class="fs-2 fw-bold text-blue">Previous Contests <span class="text-black">With Handpicked</span> Winners</p>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <!-- closed 1 -->
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="card h-100 d-flex flex-column">
+                            <div class="card-header text-center">
+                                <img src="./images/closed-01.jpg" alt="closed-01" class="mb-2 img-fluid">
+                            </div>
+                            <div class="card-body mt-4 text-center">
+                                <div class="contest-details">
+                                    <div class="d-flex justify-content-around">
+                                        <span class="fw-bold">88 Participants</span>
+                                        <span class="fw-bold">320 Pictures</span>
+                                    </div>
+
+                                    <div class="d-flex justify-content-around">
+                                        <span class="text-black-50">Number of Artists</span>
+                                        <span class="text-black-50">Submitted Pics</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- closed 2 -->
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="card h-100 d-flex flex-column">
+                            <div class="card-header text-center">
+                                <img src="./images/closed-02.jpg" alt="closed-02" class="mb-2 img-fluid">
+                            </div>
+                            <div class="card-body mt-4 text-center">
+                                <div class="contest-details">
+                                    <div class="d-flex justify-content-around">
+                                        <span class="fw-bold">96 Participants</span>
+                                        <span class="fw-bold">410 Pictures</span>
+                                    </div>
+
+                                    <div class="d-flex justify-content-around">
+                                        <span class="text-black-50">Number of Artists</span>
+                                        <span class="text-black-50">Submitted Pics</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- closed 3 -->
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="card h-100 d-flex flex-column">
+                            <div class="card-header text-center">
+                                <img src="./images/closed-03.jpg" alt="closed-03" class="mb-2 img-fluid">
+                            </div>
+                            <div class="card-body mt-4 text-center">
+                                <div class="contest-details">
+                                    <div class="d-flex justify-content-around">
+                                        <span class="fw-bold">74 Participants</span>
+                                        <span class="fw-bold">284 Pictures</span>
+                                    </div>
+
+                                    <div class="d-flex justify-content-around">
+                                        <span class="text-black-50">Number of Artists</span>
+                                        <span class="text-black-50">Submitted Pics</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- buttons for browsing contests -->
+            <div class="d-flex justify-content-center align-items-center mb-4">
+                <a href="#" class="btn btn-outline-primary">Browse Open Contests</a>
+            </div>
+        </div>
+
+        <!-- pricing part -->
+        <div class="fifth-part">
+            <div class="container mt-4">
+                <div class="mt-3 text-center">
+                    <h5 style="color: #00bdfe;">Our Pricing</h5>
+                    <p class="fs-2 fw-bold">
+                        Photography <span style="color: #00bdfe;">Contest Plans</span> and Price
+                        <span style="color: #00bdfe;">Awards</span>
+                    </p>
+                </div>
+                <div class="container-fluid mt-4">
+                    <div class="row">
+                        <!-- pricing 1 -->
+                        <div class="col-lg-4 col-12 mb-4 d-flex">
+                            <div class="card h-100 d-flex flex-column">
+                                <div class="card-header text-center">
+                                    <img src="./images/pricing-01.jpg" alt="pricing-01" class="mb-2">
+                                    <h5 class="card-title">Basic Plan</h5>
+                                </div>
+                                <div class="card-body mt-auto text-center">
+                                    <p class="card-text">
+                                        <!-- to display one below the other -->
+                                    <div class="text-blue">Lorem Ipsum Dolores Sonte</div>
+                                    <div class="text-blue">Songe Lorem Ipsum Dol</div>
+                                    <div class="text-blue">Matrios Venga Heptuss</div>
+                                    <div class="text-del">Denim Sriracha Kogi</div>
+                                    <div class="text-del">Digital Photography Awards</div>
+                                    </p>
+                                    <p class="fs-1 fw-bold text-blue">$25 USD</p>
+                                    <a href="#" class="btn btn-outline-primary">Choose This Plan</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- pricing 2 -->
+                        <div class="col-lg-4 col-12 mb-4 d-flex">
+                            <div class="card h-100 d-flex flex-column">
+                                <div class="card-header text-center">
+                                    <img src="./images/pricing-02.jpg" alt="pricing-02" class="mb-2">
+                                    <h5 class="card-title">Standard Plan</h5>
+                                </div>
+                                <div class="card-body mt-auto text-center">
+                                    <p class="card-text">
+                                        <!-- to display one below the other -->
+                                    <div class="text-blue">Lorem Ipsum Dolores Sonte</div>
+                                    <div class="text-blue">Songe Lorem Ipsum Dol</div>
+                                    <div class="text-blue">Matrios Venga Heptuss</div>
+                                    <div class="text-del">Denim Sriracha Kogi</div>
+                                    <div class="text-del">Digital Photography Awards</div>
+                                    </p>
+                                    <p class="fs-1 fw-bold text-blue">$45 USD</p>
+                                    <a href="#" class="btn btn-outline-primary">Choose This Plan</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- pricing 3 -->
+                        <div class="col-lg-4 col-12 mb-4 d-flex">
+                            <div class="card h-100 d-flex flex-column">
+                                <div class="card-header text-center">
+                                    <img src="./images/pricing-03.jpg" alt="pricing-03" class="mb-2">
+                                    <h5 class="card-title">Advanced Plan</h5>
+                                </div>
+                                <div class="card-body mt-auto text-center">
+                                    <p class="card-text">
+                                        <!-- to display one below the other -->
+                                    <div class="text-blue">Lorem Ipsum Dolores Sonte</div>
+                                    <div class="text-blue">Songe Lorem Ipsum Dol</div>
+                                    <div class="text-blue">Matrios Venga Heptuss</div>
+                                    <div class="text-del">Denim Sriracha Kogi</div>
+                                    <div class="text-del">Digital Photography Awards</div>
+                                    </p>
+                                    <p class="fs-1 fw-bold text-blue">$85 USD</p>
+                                    <a href="#" class="btn btn-outline-primary">Choose This Plan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <!-- footer part -->
+    <footer class="bg-primary text-white border border-2">
+        <div class="container text-center py-4">
+            <p class="mb-2">
+                Copyright &copy; 2048
+                <a href="#" class="text-white fw-bold mx-1 text-decoration-none">SnapX</a>
+                Photo Contest Co., Ltd. All rights reserved. 
+                Design:
+                <a href="#" class="text-white fw-bold mx-1 text-decoration-none">TemplateMo</a>
+                Distribution:
+                <a href="#" class="text-white fw-bold mx-1 text-decoration-none">ThemeWagon</a>
+            </p>
+        </div>
+    </footer>
+
+
+
+    <!-- including js -->
+    <!-- commented this because my modals weren't linking  -->
+    <!-- <script src="./bootstrap-5.3.3-dist/js/bootstrap.min.js"></script> -->
+
+    <!-- dropdown works when bundle.min.js is included -->
+    <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
